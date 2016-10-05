@@ -36,7 +36,9 @@ The next three lines load the appropriate libraries
 DataFiles <- "Smart_Phone_Data"
 
 
-## Checks to see if the Directory 'Smart_Phone_Data' exsist, if not it will create it; if it does it continues to next command. This is the directory the zip file will be down loaded to then unzipped.  Also included in here are the call outs to the user letting the user know if the file/directory exists and whether or not it will be created.
+## Checks to see if the Directory 'Smart_Phone_Data' exists.
+
+If the directory ‘Smart_Phone_Data’ does not exist  it will create it; if it does it continues to next command. This is the directory the zip file will be down loaded to then unzipped.  Also included in here are the call outs to the user letting the user know if the file/directory exists and whether or not it will be created.
 
 if (!file.exists(DataFiles)) {
      crtngdir 
@@ -45,7 +47,9 @@ if (!file.exists(DataFiles)) {
  } else { dirnotcreated}
 
 
-## Checks to see if the zip file exists, if not it will download it, if it does it continues to the next command.  Also included in here are the call outs to the user to let the user know if the zip file is already exists then down loads it or not depending on the results. 
+## Checks to see if the zip file exists.
+
+If the zip file does not exist it will download it, if it does it continues to the next command.  Also included in here are the call outs to the user to let the user know if the zip file is already exists then down loads it or not depending on the results. 
 
 url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
  file <- paste(DataFiles,basename(url),sep='/')
@@ -112,50 +116,53 @@ colnames(combined)[3:563] <- feature
 
 
 ## Selects all columns with headers that include mean or std(standard deviation)
-meanstd <- grep("std|mean", names(combined)) 
-meanstd2 <- combined[ ,c(1,2, meanstd)]
+* meanstd <- grep("std|mean", names(combined)) 
+* meanstd2 <- combined[ ,c(1,2, meanstd)]
 
 
 ## Reads the labels from activity_labels.txt.
-activity <- read.table("Smart_Phone_Data/UCI HAR Dataset/activity_labels.txt") 
-activity <- rename(activity, Activitycode = V1, Activity = V2)
+* activity <- read.table("Smart_Phone_Data/UCI HAR Dataset/activity_labels.txt") 
+* activity <- rename(activity, Activitycode = V1, Activity = V2)
 
 
 ## Replaces the Activitycode with a descriptive name in column 2.
-merged <- merge(activity, meanstd2, by.x = "Activitycode", by.y = "Activity") 
-merged2 <- select(merged, -Activitycode) 
+* merged <- merge(activity, meanstd2, by.x = "Activitycode", by.y = "Activity") 
+* merged2 <- select(merged, -Activitycode) 
 
 
 ## Replaces (substitutes)  “^t”  with “Time” and “^f” with “Frequency”
-names(merged2) <- sub("^t", "Time", names(merged2)) 
-names(merged2) <- sub("^f", "Frequency", names(merged2))
+* names(merged2) <- sub("^t", "Time", names(merged2)) 
+* names(merged2) <- sub("^f", "Frequency", names(merged2))
 
 
 ## writes the text file “tidydata.txt” to the working directory
-MeltActSub <- melt(merged2, id=c("Activity", "Subject"))
-means <- dcast(MeltActSub, Subject + Activity ~ variable, mean)
-write.table(means, "tidydata.txt", row.names = FALSE)
+* MeltActSub <- melt(merged2, id=c("Activity", "Subject"))
+* means <- dcast(MeltActSub, Subject + Activity ~ variable, mean)
+* write.table(means, "tidydata.txt", row.names = FALSE)
 
 
 ## Clean up.  Removes un-needed variables to free up memory.
-Clnup 
-rm(X_train)
-rm(Y_train)
-rm(subject_train)
-rm(X_test)
-rm(Y_test)
-rm(subject_test)
-rm(combined)
-rm(feature)
-rm(activity)
-rm(crtngdir)
-rm(dircreated)
-rm(dirnotcreated)
-rm(filecreated)
-rm(unzpngfl)
-rm(filesunzp)
-rm(filenotcreated)
-rm(downloadingfile)
+The first prints "Cleaning up un needed objects."
+* Clnup 
+
+The following cleans up the objects stored in memory.
+* rm(X_train)
+* rm(Y_train)
+* rm(subject_train)
+* rm(X_test)
+* rm(Y_test)
+* rm(subject_test)
+* rm(combined)
+* rm(feature)
+* rm(activity)
+* rm(crtngdir)
+* rm(dircreated)
+* rm(dirnotcreated)
+* rm(filecreated)
+* rm(unzpngfl)
+* rm(filesunzp)
+* rm(filenotcreated)
+* rm(downloadingfile)
 
 
 ## Timer stop.  This calculates the time it took to run the code.
