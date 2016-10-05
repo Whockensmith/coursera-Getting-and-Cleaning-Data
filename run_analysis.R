@@ -54,6 +54,7 @@ MeltActSub <- melt(merged2, id=c("Activity", "Subject"))
 means <- dcast(MeltActSub, Subject + Activity ~ variable, mean)
 write.table(means, "tidydata.txt", row.names = FALSE)
 Clnup 
+
 rm(X_train)
 rm(Y_train)
 rm(subject_train)
