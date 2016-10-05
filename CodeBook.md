@@ -167,3 +167,41 @@ The following cleans up the objects stored in memory.
 
 ## Timer stop.  This calculates the time it took to run the code.
 proc.time() – ptm
+
+
+# Code Used
+* proc.time():   Returns five elements for backwards compatibility, but its print method prints a named vector of length 3. The first two entries are the total user and system CPU times of the current R process and any child processes on which it has waited, and the third entry is the ‘real’ elapsed time since the process was started.
+
+* if()  
+
+* else
+* file.exists ():   Rreturns a logical vector indicating whether the files named by its argument exist. (Here ‘exists’ is in the sense of the system's stat call: a file will be reported as existing only if you have the permissions needed by stat. Existence can also be checked by file.access, which might use different permissions and so obtain a different result. Note that the existence of a file does not imply that it is readable: for that usefile.access.) What constitutes a ‘file’ is system-dependent, but should include directories. (However, directory names must not include a trailing backslash or slash on Windows.) Note that if the file is a symbolic link on a Unix-alike, the result indicates if the link points to an actual file, not just if the link exists. Lastly, note the different function exists which checks for existence of R objects.
+
+* dir.create():    Creates the last element of the path, unless recursive = TRUE. Trailing path separators are discarded. On Windows drives are allowed in the path specification and unless the path is rooted, it will be interpreted relative to the current directory on that drive. mode is ignored on Windows.	
+
+* paste():   Paste converts its arguments (via as.character) to character strings, and concatenates them (separating them by the string given by sep). If the arguments are vectors, they are concatenated term-by-term to give a character vector result. Vector arguments are recycled as needed, with zero-length arguments being recycled to "".
+
+* download.file():  The function download.file can be used to download a single file as described by url from the internet and store it in destfile. The url must start with a scheme such as http://, https://, ftp:// orfile://.
+
+* unzip():  Extract files from or list a zip archive.
+* read.table()
+* cbind()
+* rbind()
+* as.character()
+* combine()
+* grep()
+* c()
+* rename()
+* merge()
+* select()
+* sub()
+* melt()
+* dcast()
+* write.table()
+* means
+
+References
+Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole.
+Chambers, J. M. (1992) Data for models. Chapter 3 of Statistical Models in S eds J. M. Chambers and T. J. Hastie, Wadsworth & Brooks/Cole.
+
+
