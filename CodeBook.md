@@ -1,9 +1,10 @@
 #                                   Code Book for the Tidy Dataset
 ## Just a timer to test the speed.  This is started for the timer.
 ptm <- proc.time()
-
+I initially used this to test how quickly the script was running and if I could improve its performance.  I left it here for a reference so the user as an idea of how long it really took.  Also if someone wanted to modify the code to improve it a timer was already here.
 
 ## A few statements used with in this code to tell the user what’s going on.
+The following code allows the user to know if the script found the download file already in the working directory or not.  Then will inform the user weather or not it was unzipped.  I did this because it can be frustrating after code runs and you’re not sure if anything actually happened.
 * crtngdir <- "Creating Directory"
 * dircreated <- "Directory Created"
 * dirnotcreated <- "Directory already exists, no new directory created"
@@ -17,10 +18,15 @@ ptm <- proc.time()
 
 
 ## Library Loads that are needed to download and manipulate the data.
-Addlbry
-library(dplyr)
-library(downloader)
-library(reshape2)
+First line prints "Loading a few libraries to ensure proper operation."  to the screen.  These libraries are necessary  for downloading and manipulating the files.
+
+*Addlbry  
+
+The next three lines load the appropriate libraries
+
+•	library(dplyr)
+•	library(downloader)
+•	library(reshape2)
 
 
 ## Declares the Directory the data will be downloaded into.
