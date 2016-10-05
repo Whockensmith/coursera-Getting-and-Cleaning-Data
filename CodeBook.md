@@ -1,6 +1,9 @@
 #                                   Code Book for the Tidy Dataset
-## Just a timer to test the speed.  This is started for the timer.
-ptm <- proc.time()
+## Just a timer to test the speed.  
+
+* ptm <- proc.time()
+
+This is the first part of the timer; the second part is at the end of the script.
 I initially used this to test how quickly the script was running and if I could improve its performance.  I left it here for a reference so the user as an idea of how long it really took.  Also if someone wanted to modify the code to improve it a timer was already here.
 
 ## A few statements used with in this code to tell the user what’s going on.
@@ -33,7 +36,8 @@ The next three lines load the appropriate libraries
 DataFiles <- "Smart_Phone_Data"
 
 
-## Checks to see if the Directory 'Smart_Phone_Data' exsist, if not it will create it; if it does it continues to next command. This is the directory the zip file will be down loaded to then unzipped.
+## Checks to see if the Directory 'Smart_Phone_Data' exsist, if not it will create it; if it does it continues to next command. This is the directory the zip file will be down loaded to then unzipped.  Also included in here are the call outs to the user letting the user know if the file/directory exists and whether or not it will be created.
+
 if (!file.exists(DataFiles)) {
      crtngdir 
      dir.create(DataFiles)
@@ -41,7 +45,8 @@ if (!file.exists(DataFiles)) {
  } else { dirnotcreated}
 
 
-## Checks to see if the zip file exists, if not it will download it, if it does it continues to the next command.
+## Checks to see if the zip file exists, if not it will download it, if it does it continues to the next command.  Also included in here are the call outs to the user to let the user know if the zip file is already exists then down loads it or not depending on the results. 
+
 url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
  file <- paste(DataFiles,basename(url),sep='/')
  if (!file.exists(file)) { 
@@ -54,7 +59,7 @@ url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR
  } else {filenotcreated}
 
 
-## Reads X_train into a data frame (memory)
+## Reads X_train.txt file into a data frame (memory)
 X_train <- read.table("Smart_Phone_Data/UCI HAR Dataset/train/X_train.txt")
 
 
