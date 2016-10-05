@@ -169,12 +169,13 @@ The following cleans up the objects stored in memory.
 proc.time() – ptm
 
 
-# Code Used
+# Definitions of Codes Used in run_analysis.R script
 * proc.time():   Returns five elements for backwards compatibility, but its print method prints a named vector of length 3. The first two entries are the total user and system CPU times of the current R process and any child processes on which it has waited, and the third entry is the ‘real’ elapsed time since the process was started.
 
-* if()  
+* if():  The if/else statement conditionally evaluates two statements. There is a condition which is evaluated and if the value is TRUE then the first statement is evaluated; otherwise the second statement will be evaluated. The if/else statement returns, as its value, the value of the statement that was selected.
 
-* else
+* else():  The if/else statement conditionally evaluates two statements. There is a condition which is evaluated and if the value is TRUE then the first statement is evaluated; otherwise the second statement will be evaluated. The if/else statement returns, as its value, the value of the statement that was selected.
+
 * file.exists ():   Rreturns a logical vector indicating whether the files named by its argument exist. (Here ‘exists’ is in the sense of the system's stat call: a file will be reported as existing only if you have the permissions needed by stat. Existence can also be checked by file.access, which might use different permissions and so obtain a different result. Note that the existence of a file does not imply that it is readable: for that usefile.access.) What constitutes a ‘file’ is system-dependent, but should include directories. (However, directory names must not include a trailing backslash or slash on Windows.) Note that if the file is a symbolic link on a Unix-alike, the result indicates if the link points to an actual file, not just if the link exists. Lastly, note the different function exists which checks for existence of R objects.
 
 * dir.create():    Creates the last element of the path, unless recursive = TRUE. Trailing path separators are discarded. On Windows drives are allowed in the path specification and unless the path is rooted, it will be interpreted relative to the current directory on that drive. mode is ignored on Windows.	
@@ -184,24 +185,43 @@ proc.time() – ptm
 * download.file():  The function download.file can be used to download a single file as described by url from the internet and store it in destfile. The url must start with a scheme such as http://, https://, ftp:// orfile://.
 
 * unzip():  Extract files from or list a zip archive.
-* read.table()
-* cbind()
-* rbind()
-* as.character()
-* combine()
-* grep()
-* c()
-* rename()
-* merge()
-* select()
-* sub()
-* melt()
-* dcast()
-* write.table()
-* means
 
-References
-Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole.
-Chambers, J. M. (1992) Data for models. Chapter 3 of Statistical Models in S eds J. M. Chambers and T. J. Hastie, Wadsworth & Brooks/Cole.
+* read.table():  Reads a file in table format and creates a data frame from it, with cases corresponding to lines and variables to fields in the file.
+
+* cbind():   Take a sequence of vector, matrix or data-frame arguments and combine by columns, respectively. These are generic functions with methods for other R classes.
+
+* rbind():  Take a sequence of vector, matrix or data-frame arguments and combine by rows, respectively. These are generic functions with methods for other R classes.
+
+* as.character():  Create or test for objects of type "character".  as.character represents real and complex numbers to 15 significant digits (technically the compiler's setting of the ISO C constant DBL_DIG, which will be 15 on machines supporting IEC60559 arithmetic according to the C99 standard). This ensures that all the digits in the result will be reliable (and not the result of representation error), but does mean that conversion to character and back to numeric may change the number. If you want to convert numbers to character with the maximum possible precision, use format.
+
+* combine():  This is an efficient implementation of the common pattern of do.call(rbind, dfs) or do.call(cbind, dfs) for binding many data frames into one. combine() acts like c() or unlist() but uses consistent dplyr coercion rules.
+
+* grep():  Search for matches to argument pattern within each element of a character vector: they differ in the format of and amount of detail in the results.
+
+* c():  his is a generic function which combines its arguments.
+
+* rename():  The rename function provides an easy way to rename the columns of a data.frame or the items in a list.
+
+* merge():  Merge two data frames by common columns or row names, or do other versions of database join operations.
+
+* select():  keeps only the variables you mention.
+
+* sub():  Replace the first occurrence of a pattern.
+
+* melt():  You need to tell melt which of your variables are id variables, and which are measured variables. If you only supply one of id.vars and measure.vars, melt will assume the remainder of the variables in the data set belong to the other. If you supply neither, melt will assume factor and character variables are id variables, and all others are measured.
+
+* dcast():  Use acast or dcast depending on whether you want vector/matrix/array output or data frame output. Data frames can have at most two dimensions.
+
+* write.table():  write.table prints its required argument x (after converting it to a data frame if it is not one nor a matrix) to a file or connection.
+
+* mean():  Generic function for the (trimmed) arithmetic mean.
+
+## References
+From Rstudio via help view
+
+* Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole.
+* Chambers, J. M. (1992) Data for models. Chapter 3 of Statistical Models in S eds J. M. Chambers and T. J. Hastie, Wadsworth & Brooks/Cole.
+* Hadley Wickham (20Feb2015) Flexibly reshape data
+
 
 
