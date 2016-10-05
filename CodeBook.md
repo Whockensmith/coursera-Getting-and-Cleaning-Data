@@ -4,16 +4,16 @@ ptm <- proc.time()
 
 
 ## A few statements used with in this code to tell the user what’s going on.
-crtngdir <- "Creating Directory"
-dircreated <- "Directory Created"
-dirnotcreated <- "Directory already exists, no new directory created"
-filecreated <- "File Downloaded"
-unzpngfl <- "Unzipping files"
-filesunzp <- "Files Unzipped"
-filenotcreated <- "File already exists, no file downloaded"
-downloadingfile <- "Downloading File, this may take some time.  Approximately 4 to 7 minutes."
-Addlbry <- "Loading a few libraries to ensure proper operation."
-Clnup <- "Cleaning up un needed objects."
+* crtngdir <- "Creating Directory"
+* dircreated <- "Directory Created"
+* dirnotcreated <- "Directory already exists, no new directory created"
+* filecreated <- "File Downloaded"
+* unzpngfl <- "Unzipping files"
+* filesunzp <- "Files Unzipped"
+* filenotcreated <- "File already exists, no file downloaded"
+* downloadingfile <- "Downloading File, this may take some time.  Approximately 4 to 7 minutes."
+* Addlbry <- "Loading a few libraries to ensure proper operation."
+* Clnup <- "Cleaning up un needed objects."
 
 
 ## Library Loads that are needed to download and manipulate the data.
@@ -149,4 +149,3 @@ rm(downloadingfile)
 
 ## Timer stop.  This calculates the time it took to run the code.
 proc.time() – ptm
-
