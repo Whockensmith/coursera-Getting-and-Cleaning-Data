@@ -20,13 +20,13 @@ The following code allows the user to know if the script found the download file
 ## Library Loads that are needed to download and manipulate the data.
 First line prints "Loading a few libraries to ensure proper operation."  to the screen.  These libraries are necessary  for downloading and manipulating the files.
 
-*Addlbry  
+* Addlbry
 
 The next three lines load the appropriate libraries
 
-•	library(dplyr)
-•	library(downloader)
-•	library(reshape2)
+* library(dplyr)
+* library(downloader)
+* library(reshape2)
 
 
 ## Declares the Directory the data will be downloaded into.
