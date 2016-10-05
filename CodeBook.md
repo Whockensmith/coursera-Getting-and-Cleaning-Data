@@ -1,4 +1,6 @@
 #                                   Code Book for the Tidy Dataset
+The first part of this code book shows how the code was used and a quick discription of what it did.  At the end of this document are the codes and their discriptions.
+
 ## Just a timer to test the speed.  
 
 * ptm <- proc.time()
