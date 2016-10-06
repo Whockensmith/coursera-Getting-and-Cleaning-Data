@@ -9,6 +9,7 @@ filenotcreated <- "File already exists, no file downloaded"
 downloadingfile <- "Downloading File, this may take some time.  Approximately 4 to 7 minutes."
 Addlbry <- "Loading a few libraries to ensure proper operation."
 Clnup <- "Cleaning up un needed objects."
+Fnshd <- "Complete.  Your tidy data is located in your working directory as tidydata.txt."
 Addlbry
 library(dplyr)
 library(downloader)
@@ -71,5 +72,6 @@ rm(unzpngfl)
 rm(filesunzp)
 rm(filenotcreated)
 rm(downloadingfile)
+Fnshd
 proc.time()-ptm
 
