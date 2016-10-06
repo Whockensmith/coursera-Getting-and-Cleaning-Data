@@ -20,6 +20,7 @@ The following code allows the user to know if the script found the download file
 * downloadingfile <- "Downloading File, this may take some time.  Approximately 4 to 7 minutes."
 * Addlbry <- "Loading a few libraries to ensure proper operation."
 * Clnup <- "Cleaning up un needed objects."
+* Fnshd <- "Complete.  Your tidy data is located in your working directory as tidydata.txt."
 
 
 ## Library Loads that are needed to download and manipulate the data.
@@ -166,6 +167,7 @@ The following cleans up the objects stored in memory.
 * rm(filenotcreated)
 * rm(downloadingfile)
 
+* Fnshd
 
 ## Timer stop.  This calculates the time it took to run the code.
 proc.time() – ptm
