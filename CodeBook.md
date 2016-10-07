@@ -221,7 +221,7 @@ proc.time() – ptm
 * mean():  Generic function for the (trimmed) arithmetic mean.
 
 ## References
-From Rstudio via help view
+From Rstudio via help view 
 
 * Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) The New S Language. Wadsworth & Brooks/Cole.
 * Chambers, J. M. (1992) Data for models. Chapter 3 of Statistical Models in S eds J. M. Chambers and T. J. Hastie, Wadsworth & Brooks/Cole.
